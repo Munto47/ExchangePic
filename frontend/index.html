@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExchangePic</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">微信风格聊天截图 · 头像替换 MVP</p>
+        <h1>自动找出右侧头像并一键替换</h1>
+        <p class="lead">
+          上传聊天截图和新头像，系统会先自动识别右侧“我发送的消息”头像，再让你点选确认后导出新图。
+        </p>
+      </section>
+
+      <section class="panel controls">
+        <div class="field">
+          <label for="screenshot">聊天截图</label>
+          <input id="screenshot" type="file" accept="image/png,image/jpeg,image/webp" />
+        </div>
+        <div class="field">
+          <label for="avatar">新头像</label>
+          <input id="avatar" type="file" accept="image/png,image/jpeg,image/webp" />
+        </div>
+        <div class="actions">
+          <button id="detectButton" class="primary">1. 自动识别头像</button>
+          <button id="replaceButton" class="secondary" disabled>2. 生成替换结果</button>
+        </div>
+        <p id="status" class="status">等待上传图片。</p>
+      </section>
+
+      <section class="panel workspace">
+        <div class="workspace-header">
+          <h2>预览与点选修正</h2>
+          <p>点击框选区域可切换是否替换。</p>
+        </div>
+        <div class="preview-wrap">
+          <img id="previewImage" alt="聊天截图预览" />
+          <canvas id="overlay"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
