@@ -1,0 +1,5 @@
+# Claude longrun local state
+.claude/state/
+.claude/logs/
+.claude/settings.local.json
+BLOCKED.md
